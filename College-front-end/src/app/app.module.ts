@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { LogInPageComponent } from './log-in-page/log-in-page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [

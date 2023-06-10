@@ -8,6 +8,7 @@ import { ProfileService } from '../profile.service';
   styleUrls: ['./register-page.component.css']
 })
 export class RegisterPageComponent {
+
   constructor(private profileService: ProfileService, private myRouter: Router){} 
 
 profile = {
@@ -31,6 +32,6 @@ getVal(name:string,email:string,password:string)
       this.myRouter.navigateByUrl('home-page-component');
 
   }
-
 }
+
 

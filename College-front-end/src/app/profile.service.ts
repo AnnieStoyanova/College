@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Profile } from './profile';
 
@@ -7,7 +7,6 @@ import { Profile } from './profile';
   providedIn: 'root'
 })
 export class ProfileService {
-
   private profilesUrl: string;
 
   constructor(private http: HttpClient) { 
@@ -48,6 +47,4 @@ export class ProfileService {
       }
     );
   }
-
-  
 }
