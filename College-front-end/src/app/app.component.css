@@ -31,4 +31,8 @@ ul {
   .navbar a:hover {
     color: #ffcc00;
   }
+
+  a{
+    margin-right: 20px;
+  }
   

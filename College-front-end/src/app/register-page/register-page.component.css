@@ -93,7 +93,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-image: url("images/mountainbg.jpg");
+    /* background-image: url("images/mountainbg.jpg"); */
     background-repeat: no-repeat;
   }
   input[type="text"],
@@ -132,12 +132,12 @@ body {
     overflow: hidden;
   }
   
-.image-container img {
+/* .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: -1;
- }
+ } */
   
   
   

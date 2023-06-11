@@ -4,10 +4,12 @@ import com.example.College.Department.Department;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "api/v1/course")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(path = "api/course")
 
 public class CourseController {
 
@@ -18,6 +20,10 @@ public class CourseController {
         this.courseService = courseService;
     }
 
+    @GetMapping(value = "/all")
+    public List<Course> findAll(){
+        return courseService.findAll();
+    }
     @PostMapping(value = "/add")
     public void addCourse(@RequestBody Course course) {
         courseService.addNewCourse(course);
@@ -36,7 +42,7 @@ public class CourseController {
     }
 
 
-    @DeleteMapping(value = "/{courseId}")
+    @DeleteMapping(value = "/delete/{courseId}")
     public void deleteCourse(@PathVariable("courseId") Long courseId) {
         courseService.deleteCourse(courseId);
     }

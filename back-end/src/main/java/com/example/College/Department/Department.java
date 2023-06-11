@@ -24,12 +24,15 @@ public class Department {
     @OneToMany
     private List<Course> courses;
 
-    public Department(String name, Teacher headOfDepartment, List<Course> courses) {
+    @ManyToOne
+    private Department department;
+
+    public Department(String name, Teacher headOfDepartment, List<Course> courses, Department department) {
         this.name = name;
         this.headOfDepartment = headOfDepartment;
         this.courses = courses;
+        this.department = department;
     }
-
     public Department() {
     }
 
@@ -61,6 +64,14 @@ public class Department {
         this.courses = courses;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     @Override
     public String toString() {
         return "Department{" +
@@ -68,6 +79,7 @@ public class Department {
                 ", name='" + name + '\'' +
                 ", headOfDepartment=" + headOfDepartment +
                 ", courses=" + courses +
+                ", department=" + department +
                 '}';
     }
 }

@@ -7,7 +7,8 @@ import java.util.Collection;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/profiles")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("api/profiles")
 public class ProfileController {
 
     @Autowired
@@ -46,4 +47,3 @@ public class ProfileController {
 
     }
 }
-

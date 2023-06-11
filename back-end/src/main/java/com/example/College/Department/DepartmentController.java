@@ -6,10 +6,12 @@ import com.example.College.Teacher.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "api/v1/department")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(path = "api/department")
 
 public class DepartmentController {
 
@@ -22,6 +24,11 @@ public class DepartmentController {
         this.departmentService = departmentService;
         this.courseService = courseService;
         this.teacherService = teacherService;
+    }
+
+    @GetMapping(value = "/all")
+    public List<Department> findAll(){
+       return departmentService.findAll();
     }
 
     @PostMapping(value = "/add")

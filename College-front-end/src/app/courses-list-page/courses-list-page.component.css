@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    min-height: 100vh;
+    background-color: #F6FFFC;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.courses-page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    padding-top: 90px;
+}
+
+.courses-page-container--heading{
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 59px;
+    text-align: center;
+    color: #252525;
+}

@@ -10,7 +10,7 @@ export class ProfileService {
   private profilesUrl: string;
 
   constructor(private http: HttpClient) { 
-    this.profilesUrl = 'http://localhost:4200/api/profiles';
+    this.profilesUrl = 'http://localhost:8080/api/profiles';
   }
 
   public findAll(): Observable<Profile[]> {

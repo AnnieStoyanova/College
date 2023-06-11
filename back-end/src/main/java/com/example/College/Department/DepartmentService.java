@@ -4,6 +4,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -24,6 +25,9 @@ public class DepartmentService {
         departmentRepo.saveAndFlush(department);
     }
 
+    public List<Department> findAll(){
+        return departmentRepo.findAll();
+    }
 
     @Transactional
     public void deleteDepartment(Long departmentId) {
