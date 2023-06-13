@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoursesListPageComponent } from './courses-list-page/courses-list-page.component';
 import { CoursesListItemComponent } from './courses-list-item/courses-list-item.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { LogInPageComponent } from './log-in-page/log-in-page.component';
 import { FacultyListPageComponent } from './faculty-list-page/faculty-list-page.component';
 import { FacultyListItemComponent } from './faculty-list-item/faculty-list-item.component';
 import { DepartmentListItemComponent } from './department-list-item/department-list-item.component';
@@ -22,7 +23,8 @@ import { DepartmentListPageComponent } from './department-list-page/department-l
     FacultyListPageComponent,
     FacultyListItemComponent,
     DepartmentListItemComponent,
-    DepartmentListPageComponent
+    DepartmentListPageComponent,
+    LogInPageComponent
     
   ],
   imports: [

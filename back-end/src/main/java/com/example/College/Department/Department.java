@@ -34,7 +34,6 @@ public class Department {
         this.courses = courses;
         this.faculty = faculty;
     }
-
     public Department() {
     }
 
