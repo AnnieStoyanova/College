@@ -1,6 +1,7 @@
 package com.example.College.Faculty;
 
 import com.example.College.Course.Course;
+import com.example.College.Department.Department;
 import com.example.College.Department.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -41,6 +42,11 @@ public class FacultyController {
         });
     }
 
+    @GetMapping(value = "/{facultyId}/departments")
+    public Optional<List<Department>> getAllDepartments(@PathVariable("facultyId") Long facultyId) {
+        return facultyService.findById(facultyId).map(Faculty::getDepartments);
+    }
+
 //    @PutMapping(value = "/update/{departmentId}")
 //    public Optional<Object> updateDepartment(@PathVariable("departmentId") Long departmentId, @RequestBody Department newDepartment) {
 //        return departmentService.findById(departmentId)
@@ -54,7 +60,7 @@ public class FacultyController {
 //    }
 
     @DeleteMapping(value = "/{facultyId}")
-    public void deleteFaculty(@PathVariable("departmentId") Long facultyId) {
+    public void deleteFaculty(@PathVariable("facultyId") Long facultyId) {
         facultyService.deleteFaculty(facultyId);
     }
 }

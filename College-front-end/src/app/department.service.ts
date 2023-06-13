@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Department } from './department';
 import { Observable } from 'rxjs';
+import { Course } from './course';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +43,9 @@ export class DepartmentService {
         console.error("Error updating department", error);
       }
     );
+  }
+
+  public getCourses(id:number):Observable<Course[]>{
+    return this.http.get<Course[]>(this.departmentURL + '/' + id + '/' + "courses");
   }
 }

@@ -1,6 +1,7 @@
 package com.example.College.Department;
 
 import com.example.College.Course.Course;
+import com.example.College.Faculty.Faculty;
 import com.example.College.Teacher.Teacher;
 import jakarta.persistence.*;
 
@@ -25,14 +26,15 @@ public class Department {
     private List<Course> courses;
 
     @ManyToOne
-    private Department department;
+    private Faculty faculty;
 
-    public Department(String name, Teacher headOfDepartment, List<Course> courses, Department department) {
+    public Department(String name, Teacher headOfDepartment, List<Course> courses, Faculty faculty) {
         this.name = name;
         this.headOfDepartment = headOfDepartment;
         this.courses = courses;
-        this.department = department;
+        this.faculty = faculty;
     }
+
     public Department() {
     }
 
@@ -64,22 +66,15 @@ public class Department {
         this.courses = courses;
     }
 
-    public Department getDepartment() {
-        return department;
+
+
+    public Faculty getFaculty() {
+        return faculty;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setFaculty(Faculty faculty) {
+        this.faculty = faculty;
     }
 
-    @Override
-    public String toString() {
-        return "Department{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", headOfDepartment=" + headOfDepartment +
-                ", courses=" + courses +
-                ", department=" + department +
-                '}';
-    }
+
 }

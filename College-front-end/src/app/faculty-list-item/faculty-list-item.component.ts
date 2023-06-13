@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Faculty } from '../faculty';
 import { FacultyService } from '../faculty.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-faculty-list-item',
@@ -9,12 +10,20 @@ import { FacultyService } from '../faculty.service';
 })
 export class FacultyListItemComponent {
   faculties: Faculty[] = [];
+  static ID: number;
 
-  constructor(private facultyService: FacultyService) {}
+  constructor(private facultyService: FacultyService, private router: Router) {}
 
   ngOnInit(): void{
     this.facultyService.findAll().subscribe(data =>
       this.faculties = data
     )
   };
+
+  getId(id: number): void {
+    FacultyListItemComponent.ID = id;
+    this.router.navigateByUrl('department-list-page-component');
+    console.log(this.facultyService.getDepartments(id));
+  }
+
 }

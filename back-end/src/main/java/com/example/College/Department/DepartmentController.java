@@ -1,6 +1,8 @@
 package com.example.College.Department;
 
+import com.example.College.Course.Course;
 import com.example.College.Course.CourseService;
+import com.example.College.Faculty.Faculty;
 import com.example.College.Teacher.Teacher;
 import com.example.College.Teacher.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,6 +66,11 @@ public class DepartmentController {
                     departmentService.addNewDepartment(department);
                     return null;
                 });
+    }
+
+    @GetMapping(value = "/{departmentId}/courses")
+    public Optional<List<Course>> getAllCourses(@PathVariable("departmentId") Long departmentId) {
+        return departmentService.findById(departmentId).map(Department::getCourses);
     }
 
     @DeleteMapping(value = "/{departmentId}")

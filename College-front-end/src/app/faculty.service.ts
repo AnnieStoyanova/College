@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Faculty } from './faculty';
+import { Department } from './department';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +43,9 @@ private facultyURL:string
         console.error("Error updating faculty", error);
       }
     );
+  }
+
+  public getDepartments(id:number):Observable<Department[]>{
+    return this.http.get<Department[]>(this.facultyURL + '/' + id + '/' + "departments");
   }
 }
