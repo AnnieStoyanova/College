@@ -1,7 +1,7 @@
 <div class="faculty-item-container" *ngFor="let faculty of faculties">
-    <div class="faculty-item">
+    <button class="faculty-item" (click) = "getId(faculty.id)">
         <div class="faculty-item--course">
             <div class="faculty--name">{{faculty.name}}</div>
         </div>
-    </div>
+    </button>
 </div>

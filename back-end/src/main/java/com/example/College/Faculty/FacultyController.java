@@ -42,6 +42,11 @@ public class FacultyController {
         });
     }
 
+    @GetMapping(value = "/{facultyId}/departments")
+    public Optional<List<Department>> getAllDepartments(@PathVariable("facultyId") Long facultyId) {
+        return facultyService.findById(facultyId).map(Faculty::getDepartments);
+    }
+
 //    @PutMapping(value = "/update/{departmentId}")
 //    public Optional<Object> updateDepartment(@PathVariable("departmentId") Long departmentId, @RequestBody Department newDepartment) {
 //        return departmentService.findById(departmentId)
@@ -53,11 +58,6 @@ public class FacultyController {
 //                    return null;
 //                });
 //    }
-
-    @GetMapping(value = "/{facultyId}/departments")
-    public Optional<List<Department>> getAllDepartments(@PathVariable("facultyId") Long facultyId) {
-        return facultyService.findById(facultyId).map(Faculty::getDepartments);
-    }
 
     @DeleteMapping(value = "/{facultyId}")
     public void deleteFaculty(@PathVariable("facultyId") Long facultyId) {

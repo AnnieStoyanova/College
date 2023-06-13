@@ -12,13 +12,10 @@ public class Profile {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-
     private String role;
     private String name;
     private String email;
     private String password;
-
-
     public Profile(String role, String name, String email, String password) {
         this.role = role;
         this.name = name;
