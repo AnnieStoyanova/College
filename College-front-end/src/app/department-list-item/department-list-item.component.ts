@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Department } from '../department';
-import { DepartmentService } from '../department.service';
 import { FacultyListItemComponent } from '../faculty-list-item/faculty-list-item.component';
 import { FacultyService } from '../faculty.service';
 import { Router } from '@angular/router';
@@ -14,7 +13,7 @@ export class DepartmentListItemComponent {
   departments: Department[] = [];
   static ID: number;
 
-  constructor(private departmentService: DepartmentService, private facultyService: FacultyService,private router: Router) {}
+  constructor(private facultyService: FacultyService,private router: Router) {}
 
   ngOnInit(): void {
     this.facultyService.getDepartments(FacultyListItemComponent.ID).subscribe(

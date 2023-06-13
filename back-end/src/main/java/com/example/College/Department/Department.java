@@ -66,8 +66,6 @@ public class Department {
         this.courses = courses;
     }
 
-
-
     public Faculty getFaculty() {
         return faculty;
     }
@@ -76,5 +74,14 @@ public class Department {
         this.faculty = faculty;
     }
 
-
+    @Override
+    public String toString() {
+        return "Department{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", headOfDepartment=" + headOfDepartment +
+                ", courses=" + courses +
+                ", faculty=" + faculty +
+                '}';
+    }
 }

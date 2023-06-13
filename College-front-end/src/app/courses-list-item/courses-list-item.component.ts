@@ -12,7 +12,7 @@ import { DepartmentListItemComponent } from '../department-list-item/department-
 export class CoursesListItemComponent {
   courses: Course[] = [];
 
-  constructor(private courseService: CourseService,private departmentService:DepartmentService) {}
+  constructor(private departmentService:DepartmentService) {}
 
   ngOnInit(): void{
     this.departmentService.getCourses(DepartmentListItemComponent.ID).subscribe(
