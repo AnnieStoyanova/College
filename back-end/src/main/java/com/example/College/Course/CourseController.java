@@ -1,6 +1,5 @@
 package com.example.College.Course;
 
-import com.example.College.Department.Department;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

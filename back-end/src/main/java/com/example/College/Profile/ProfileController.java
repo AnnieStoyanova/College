@@ -31,7 +31,7 @@ public class ProfileController {
 
     @PostMapping("/add")
     public void addProfile(@RequestBody Profile profile){
-        profileService.saveProfileToDb(profile);
+            profileService.saveProfileToDb(profile);
     }
 
     @PutMapping("/update/{profileId}")

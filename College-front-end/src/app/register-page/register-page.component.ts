@@ -13,16 +13,18 @@ export class RegisterPageComponent {
 
 profile = {
     id: 12,
+    role: " ",
     name: " ",
     email: " ",
     password: " "
     };
 
-getVal(name:string,email:string,password:string)
+getVal(role:string,name:string,email:string,password:string)
   {
 
       this.profile = {
       id: 12,
+      role: role.toUpperCase(),
       name: name,
       email: email,
       password: password

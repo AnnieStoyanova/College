@@ -9,20 +9,32 @@ import jakarta.persistence.Id;
 public class Profile {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
+
+    private String role;
     private String name;
     private String email;
     private String password;
 
 
-    public Profile(String name, String email, String password) {
+    public Profile(String role, String name, String email, String password) {
+        this.role = role;
         this.name = name;
         this.email = email;
         this.password = password;
     }
 
     public Profile() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -49,10 +61,19 @@ public class Profile {
         this.password = password;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "Profile{" +
                 "id=" + id +
+                ", role='" + role + '\'' +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
