@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.List;
+
 @Entity
 public class Student {
 
@@ -17,13 +19,18 @@ public class Student {
     private String lastName;
     private String email;
     private String password;
+    private List<Double> grades;
+    private Double absences;
 
-    public Student(String role, String firstName, String lastName, String email, String password) {
+
+    public Student(String role, String firstName, String lastName, String email, String password, List<Double> grades, Double absences) {
         this.role = role;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.grades = grades;
+        this.absences = absences;
     }
 
     public Student() {
@@ -77,6 +84,22 @@ public class Student {
         this.lastName = lastName;
     }
 
+    public List<Double> getGrades() {
+        return grades;
+    }
+
+    public void setGrades(List<Double> grades) {
+        this.grades = grades;
+    }
+
+    public Double getAbsences() {
+        return absences;
+    }
+
+    public void setAbsences(Double absences) {
+        this.absences = absences;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -86,6 +109,8 @@ public class Student {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", grades=" + grades +
+                ", absences=" + absences +
                 '}';
     }
 }
