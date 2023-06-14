@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProfileService } from '../profile.service';
 import { Router } from '@angular/router';
+import { Profile } from '../profile';
 
 @Component({
   selector: 'app-log-in-page',
@@ -9,27 +10,25 @@ import { Router } from '@angular/router';
 })
 export class LogInPageComponent {
 
-isLoggedIn = false;
-
   constructor(private profileService: ProfileService, private router: Router) {}
 
-  profile = {
-    id: 12,
-    role: " ",
-    name: " ",
-    email: " ",
-    password: " "
-    };
-
-
+profile: Profile = {
+    id: 0,
+    role: "",
+    name: "",
+    email: "",
+    password: ""
+  };
+  
   getVal(email:string,password:string)
   {
     console.log("In function getval");
     this.profileService.findByEmail(email).subscribe(data => {
       this.profile = data
       
+      console.log(this.profile)
+      
       if(this.profile!=null && password == this.profile.password){
-        this.isLoggedIn = true;
       
       this.router.navigateByUrl('home-page-component');
       console.log("Logged in successfully!")
@@ -39,4 +38,6 @@ isLoggedIn = false;
       
     });
   }
-  }
+
+}
+  

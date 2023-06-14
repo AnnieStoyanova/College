@@ -100,11 +100,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-<<<<<<< Updated upstream
-    background-image: url("images/mountainbg.jpg");
-=======
     background-image: url("images/mountainbg.jpg"); 
->>>>>>> Stashed changes
     background-repeat: no-repeat;
   }
 
@@ -143,13 +139,6 @@ body {
     height: 100%;
     overflow: hidden;
   }
-<<<<<<< Updated upstream
-
-
-
-
-
-=======
   
  .image-container img {
     width: 100%;
@@ -157,9 +146,3 @@ body {
     object-fit: cover;
     z-index: -1;
  }
-  
-  
-  
-  
-  
->>>>>>> Stashed changes

@@ -23,7 +23,7 @@ export class FacultyListItemComponent {
   getId(id: number): void {
     FacultyListItemComponent.ID = id;
     this.router.navigateByUrl('department-list-page-component');
-    console.log(this.facultyService.getDepartments(id));
+    console.log(id);
   }
 
 }

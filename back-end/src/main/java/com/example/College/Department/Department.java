@@ -37,6 +37,14 @@ public class Department {
     public Department() {
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public void addCourseToDepartment(Course course){
         this.courses.add(course);
     }

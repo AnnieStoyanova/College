@@ -1,6 +1,4 @@
-
 <body>
-    <div class="image-container"><img class= "image-container img" src="mountainbg.jpg" alt="Background Image"></div>
   <div class="register-form">
     <h1>Log In</h1>
     <form>
@@ -14,9 +12,6 @@
       </div>
       <div>
         <button class = "button" (click) = "getVal(email.value, password.value)">Log in</button>
-      </div>
-      <div *ngIf="isLoggedIn" class="success-message">
-        Login successful!
       </div>
       
     </form>
