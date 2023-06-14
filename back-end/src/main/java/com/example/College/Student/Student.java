@@ -21,11 +21,11 @@ public class Student {
     private String lastName;
     private String email;
     private String password;
-    private Map<List<Double>, Course> grades;
+    private Map<Course, List<Double>> grades;
     private Double absences;
 
 
-    public Student(String role, String firstName, String lastName, String email, String password, Map<List<Double>, Course> grades, Double absences) {
+    public Student(String role, String firstName, String lastName, String email, String password, Map<Course, List<Double>> grades, Double absences) {
         this.role = role;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -86,11 +86,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public Map<List<Double>, Course> getGrades() {
+    public Map<Course, List<Double>> getGrades() {
         return grades;
     }
 
-    public void setGrades(Map<List<Double>, Course> grades) {
+    public void setGrades(Map<Course, List<Double>> grades) {
         this.grades = grades;
     }
 
