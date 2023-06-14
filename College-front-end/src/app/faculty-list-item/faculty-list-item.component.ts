@@ -26,4 +26,8 @@ export class FacultyListItemComponent {
     console.log(id);
   }
 
+  redirectToEdit() {
+    this.router.navigateByUrl('edit-faculty-list-item-component');
+  }
+
 }

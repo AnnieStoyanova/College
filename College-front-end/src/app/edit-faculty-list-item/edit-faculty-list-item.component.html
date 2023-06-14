@@ -1,0 +1,16 @@
+
+<body>
+    <div class="register-form">
+      <h1>Edit Faculty</h1>
+      <form>
+        <div class="form-group">
+          <label for="name">New name:</label>
+          <input type="text" id="name"#newName name="name" required>
+        </div>
+        <div>
+          <button class = "button" (click) = "edit(newName.value)" >Change</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <router-outlet></router-outlet>

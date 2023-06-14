@@ -12,6 +12,7 @@ import { FacultyListPageComponent } from './faculty-list-page/faculty-list-page.
 import { FacultyListItemComponent } from './faculty-list-item/faculty-list-item.component';
 import { DepartmentListItemComponent } from './department-list-item/department-list-item.component';
 import { DepartmentListPageComponent } from './department-list-page/department-list-page.component';
+import { EditFacultyListItemComponent } from './edit-faculty-list-item/edit-faculty-list-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DepartmentListPageComponent } from './department-list-page/department-l
     FacultyListItemComponent,
     DepartmentListItemComponent,
     DepartmentListPageComponent,
-    LogInPageComponent
+    LogInPageComponent,
+    EditFacultyListItemComponent
     
   ],
   imports: [
