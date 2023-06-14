@@ -1,11 +1,13 @@
 package com.example.College.Student;
 
+import com.example.College.Course.Course;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.util.List;
+import java.util.Map;
 
 @Entity
 public class Student {
@@ -19,11 +21,11 @@ public class Student {
     private String lastName;
     private String email;
     private String password;
-    private List<Double> grades;
+    private Map<List<Double>, Course> grades;
     private Double absences;
 
 
-    public Student(String role, String firstName, String lastName, String email, String password, List<Double> grades, Double absences) {
+    public Student(String role, String firstName, String lastName, String email, String password, Map<List<Double>, Course> grades, Double absences) {
         this.role = role;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -84,11 +86,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public List<Double> getGrades() {
+    public Map<List<Double>, Course> getGrades() {
         return grades;
     }
 
-    public void setGrades(List<Double> grades) {
+    public void setGrades(Map<List<Double>, Course> grades) {
         this.grades = grades;
     }
 
