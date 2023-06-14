@@ -20,6 +20,10 @@ public class TeacherService {
         return teacherRepo.findById(id);
     }
 
+    public Optional<Teacher> findTeacherByEmail(String email){
+        return teacherRepo.findTeacherByEmail(email);
+    }
+
     public void addNewTeacher(Teacher teacher) {
         teacherRepo.saveAndFlush(teacher);
     }

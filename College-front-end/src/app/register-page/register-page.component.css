@@ -5,16 +5,16 @@
     transform: translate(-50%, -50%);
     width: 300px;
   }
-
+  
   .register-form h2 {
     text-align: center;
   }
-
+  
   .register-form form {
     display: flex;
     flex-direction: column;
   }
-
+  
   .register-form .form-group {
     margin-bottom: 10px;
   }
@@ -25,7 +25,7 @@
 
 
 
-
+  
   .register-form label {
     font-weight: bold;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -36,7 +36,7 @@
     background-clip: text;
     -webkit-background-clip: text;
   }
-
+  
   .register-form input[type="text"],
   .register-form input[type="email"],
   .register-form input[type="password"] {
@@ -44,7 +44,7 @@
     padding: 8px;
     border: 1px solid #ccc;
   }
-
+  
   .register-form input[type="submit"] {
     width: 100%;
     padding: 12px;
@@ -53,7 +53,7 @@
     border:#4CAF50;
     cursor: pointer;
   }
-
+  
   .register-form input[type="submit"]:hover {
     background-color: #45a049;
   }
@@ -71,15 +71,15 @@
     border-radius: 4px;
     cursor: pointer;
   }
-
+  
   .button:hover {
     background-color: #155818;
   }
-
+  
   .button:active {
     background-color: #3e8e41;
   }
-
+  
   .button:focus {
     outline:#4CAF50;
   }
@@ -88,7 +88,7 @@ h1 {
     color: #333;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
-
+  
 h1:hover {
     color:  #3e8e41;
   }
@@ -100,7 +100,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-image: url("images/mountainbg.jpg"); 
+    background-image: url("images/mountainbg.jpg");
     background-repeat: no-repeat;
   }
 
@@ -114,13 +114,13 @@ body {
     font-size: 18px;
     color: #333;
   }
-
+  
   input[type="text"]:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.6);
   }
-
+  
   input[type="email"]:focus {
     outline: none;
     border-color: #007bff;

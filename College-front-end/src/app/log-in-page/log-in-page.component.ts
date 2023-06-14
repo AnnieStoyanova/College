@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ProfileService } from '../profile.service';
+import { StudentService } from '../student.service';
 import { Router } from '@angular/router';
-import { Profile } from '../profile';
+import { Student } from '../student';
 
 @Component({
   selector: 'app-log-in-page',
@@ -10,34 +10,35 @@ import { Profile } from '../profile';
 })
 export class LogInPageComponent {
 
-  constructor(private profileService: ProfileService, private router: Router) {}
+  constructor(private profileService: StudentService, private router: Router) {}
 
-profile: Profile = {
+student: Student = {
     id: 0,
     role: "",
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: ""
   };
   
-  getVal(email:string,password:string)
-  {
-    console.log("In function getval");
-    this.profileService.findByEmail(email).subscribe(data => {
-      this.profile = data
+  // getVal(email:string,password:string)
+  // {
+  //   console.log("In function getval");
+  //   this.profileService.findByEmail(email).subscribe(data => {
+  //     this.student = data
       
-      console.log(this.profile)
+  //     console.log(this.profile)
       
-      if(this.profile!=null && password == this.profile.password){
+  //     if(this.profile!=null && password == this.profile.password){
       
-      this.router.navigateByUrl('home-page-component');
-      console.log("Logged in successfully!")
-     } else {
-      console.log("Log in failed");
-     }
+  //     this.router.navigateByUrl('home-page-component');
+  //     console.log("Logged in successfully!")
+  //    } else {
+  //     console.log("Log in failed");
+  //    }
       
-    });
-  }
+  //   });
+  // }
 
 }
   
