@@ -38,4 +38,9 @@ this.router.navigateByUrl("edit-course-component")
   delete(id:number){
 
   }
+
+  getId(id: number): void {
+    StudentListItemComponent.ID = id;
+    this.router.navigateByUrl('grade-list-page-component');
+  }
 }

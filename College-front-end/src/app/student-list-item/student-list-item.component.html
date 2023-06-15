@@ -1,6 +1,6 @@
 <div class="student-item-container" *ngFor="let student of students">
     <button class="student-item">
-        <div class="student-item--student">
+        <div class="student-item--student" (click) = "getId(student.id)">
             <div class="student--name">{{student.firstName}}</div>
             <div class="student--name">{{student.lastName}}</div>
         </div>

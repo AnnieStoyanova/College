@@ -20,6 +20,7 @@ import { StudentListItemComponent } from './student-list-item/student-list-item.
 import { AddFacultyPageComponent } from './add-faculty-page/add-faculty-page.component';
 import { GradeListPageComponent } from './grade-list-page/grade-list-page.component';
 import { GradeListItemComponent } from './grade-list-item/grade-list-item.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { GradeListItemComponent } from './grade-list-item/grade-list-item.compon
     StudentListItemComponent,
     AddFacultyPageComponent,
     GradeListPageComponent,
-    GradeListItemComponent
+    GradeListItemComponent,
+    TableComponent
     
   ],
   imports: [

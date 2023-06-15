@@ -1,5 +1,6 @@
 package com.example.College.Grade;
 
+import com.example.College.Course.Course;
 import com.example.College.Faculty.Faculty;
 import com.example.College.Student.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,11 @@ public class GradeController {
     @GetMapping("/{id}")
     public Optional<Grade> getGradeById(@PathVariable Long id){
         return gradeService.findGradeById(id);
+    }
+
+    @GetMapping("/getCourse/{gradeId}")
+    public Optional<Course> getCourseNameOfGrade(@PathVariable Long gradeId){
+         return Optional.ofNullable(gradeService.findGradeById(gradeId).get().getCourse());
     }
 
     @GetMapping("/all")
