@@ -31,4 +31,13 @@ export class DepartmentListItemComponent {
     this.router.navigateByUrl('course-list-page-component');
     console.log(DepartmentListItemComponent.ID);
   }
+
+  edit(id:number){
+    DepartmentListItemComponent.ID = id;
+    this.router.navigateByUrl('edit-department-component');
+  }
+
+  delete(id:number){
+
+  }
 }

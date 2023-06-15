@@ -1,8 +1,9 @@
 <div class="courses-item-container" *ngFor="let course of courses">
-    <div class="courses-item">
+    <button class="courses-item">
         <div class="courses-item--course">
             <div class="courses--name">{{course.name}}</div>
         </div>
-    </div>
-
+    </button>
+    <button class="button" (click)="edit(course.id)">Edit</button>
+    <button class="button-delete" (click)="delete(course.id)">Delete</button>
 </div>

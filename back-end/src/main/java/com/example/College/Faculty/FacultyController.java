@@ -26,6 +26,7 @@ public class FacultyController {
 
     @GetMapping(value = "/all")
     public List<Faculty> findAll(){
+        System.out.println(facultyService.findAll());
         return facultyService.findAll();
     }
     @PostMapping(value = "/add")

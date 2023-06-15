@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoursesListPageComponent } from './courses-list-page/courses-list-page.component';
 import { CoursesListItemComponent } from './courses-list-item/courses-list-item.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
-import { LogInPageComponent } from './log-in-page/log-in-page.component';
 import { FacultyListPageComponent } from './faculty-list-page/faculty-list-page.component';
 import { FacultyListItemComponent } from './faculty-list-item/faculty-list-item.component';
 import { DepartmentListItemComponent } from './department-list-item/department-list-item.component';
 import { DepartmentListPageComponent } from './department-list-page/department-list-page.component';
-import { EditFacultyListItemComponent } from './edit-faculty-list-item/edit-faculty-list-item.component';
+import { EditFacultyComponent } from './edit-faculty/edit-faculty.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { EditDepartmentComponent } from './edit-department/edit-department.component';
+import { EditCourseComponent } from './edit-course/edit-course.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,10 @@ import { EditFacultyListItemComponent } from './edit-faculty-list-item/edit-facu
     FacultyListItemComponent,
     DepartmentListItemComponent,
     DepartmentListPageComponent,
-    LogInPageComponent,
-    EditFacultyListItemComponent
+    EditFacultyComponent,
+    LoginPageComponent,
+    EditDepartmentComponent,
+    EditCourseComponent
     
   ],
   imports: [

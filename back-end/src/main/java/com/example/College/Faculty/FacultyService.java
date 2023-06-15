@@ -29,7 +29,6 @@ public class FacultyService {
         facultyRepo.saveAndFlush(faculty);
     }
 
-
     @Transactional
     public void deleteFaculty(Long facultyId) {
         boolean exists = facultyRepo.existsById(facultyId);

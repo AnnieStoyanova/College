@@ -1,9 +1,10 @@
 <div class="faculty-item-container" *ngFor="let faculty of faculties">
-    <button class="faculty-item" (click) = "getId(faculty.id)">
+    <button class="faculty-item" (click)="getId(faculty.id)">
         <div class="faculty-item--course">
             <div class="faculty--name">{{faculty.name}}</div>
         </div>
+
     </button>
-    <button class = "button" (click)="redirectToEdit()">Edit</button> 
-    <button class = "button-delete">Delete</button> 
+    <button class="button" (click)="edit(faculty.id)">Edit</button>
+    <button class="button-delete" (click)="delete(faculty.id)">Delete</button>
 </div>

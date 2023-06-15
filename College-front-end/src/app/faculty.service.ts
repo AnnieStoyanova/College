@@ -15,6 +15,7 @@ private facultyURL:string
   }
 
   public findAll(): Observable<Faculty[]> {
+    console.log("In service")
     return this.http.get<Faculty[]>(this.facultyURL + "/all");
   }
 
@@ -47,5 +48,19 @@ private facultyURL:string
 
   public getDepartments(id:number):Observable<Department[]>{
     return this.http.get<Department[]>(this.facultyURL + '/' + id + '/' + "departments");
+  }
+
+  public deleteFaculty(id:number): void{
+    console.log("in faculty service");
+    this.http.delete<Faculty>(this.facultyURL + '/' + id).subscribe(
+      (response) => {
+        // Handle the response if needed
+        console.log("Faculty deleted successfully");
+      },
+      (error) => {
+        // Handle the error if any
+        console.log("Error deleting faculty:", error);
+      }
+    );
   }
 }

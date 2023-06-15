@@ -2,8 +2,6 @@ package com.example.College.Department;
 
 import com.example.College.Course.Course;
 import com.example.College.Course.CourseService;
-import com.example.College.Faculty.Faculty;
-import com.example.College.Teacher.Teacher;
 import com.example.College.Teacher.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -75,6 +73,10 @@ public class DepartmentController {
 
     @DeleteMapping(value = "/{departmentId}")
     public void deleteDepartment(@PathVariable("departmentId") Long departmentId) {
+        this.departmentService.findById(departmentId).map((department)-> {
+            department.getFaculty().deleteDepartment(department);
+            return null;
+        });
         departmentService.deleteDepartment(departmentId);
     }
 }

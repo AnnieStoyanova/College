@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("api/students")
+@RequestMapping("api/student")
 public class StudentController {
 
     @Autowired
@@ -26,6 +26,7 @@ public class StudentController {
 
     @GetMapping("/byEmail/{email}")
     public Optional<Student> getStudentByEmail(@PathVariable String email){
+        System.out.println(studentService.findStudentByEmail(email));
         return studentService.findStudentByEmail(email);
     }
 

@@ -3,6 +3,7 @@ import { Course } from '../course';
 import { CourseService } from '../course.service';
 import { DepartmentService } from '../department.service';
 import { DepartmentListItemComponent } from '../department-list-item/department-list-item.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses-list-item',
@@ -11,8 +12,9 @@ import { DepartmentListItemComponent } from '../department-list-item/department-
 })
 export class CoursesListItemComponent {
   courses: Course[] = [];
+  static ID: number;
 
-  constructor(private departmentService:DepartmentService) {}
+  constructor(private departmentService:DepartmentService,private router:Router) {}
 
   ngOnInit(): void{
     this.departmentService.getCourses(DepartmentListItemComponent.ID).subscribe(
@@ -25,4 +27,13 @@ export class CoursesListItemComponent {
       }
     );
   };
+
+  edit(id:number){
+CoursesListItemComponent.ID = id;
+this.router.navigateByUrl("edit-course-component")
+  }
+
+  delete(id:number){
+
+  }
 }

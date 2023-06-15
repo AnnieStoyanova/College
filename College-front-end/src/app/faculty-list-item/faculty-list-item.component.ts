@@ -15,9 +15,11 @@ export class FacultyListItemComponent {
   constructor(private facultyService: FacultyService, private router: Router) {}
 
   ngOnInit(): void{
+
     this.facultyService.findAll().subscribe(data =>
       this.faculties = data
     )
+    console.log("In ts");
   };
 
   getId(id: number): void {
@@ -26,8 +28,14 @@ export class FacultyListItemComponent {
     console.log(id);
   }
 
-  redirectToEdit() {
-    this.router.navigateByUrl('edit-faculty-list-item-component');
+  edit(id:number) {
+    FacultyListItemComponent.ID = id;
+    this.router.navigateByUrl('edit-faculty-component');
+  }
+
+  delete(id:number){
+    console.log("delete daculty");
+   this.facultyService.deleteFaculty(id);
   }
 
 }
