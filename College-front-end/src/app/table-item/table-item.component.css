@@ -1,0 +1,8 @@
+.table-item {
+    border: none; /* Remove the button border if desired */
+    padding: 0; /* Remove any padding if necessary */
+    /* Add any other desired styling properties */
+    width: 100%;
+    font-size: larger;
+    margin-top: auto;
+  }

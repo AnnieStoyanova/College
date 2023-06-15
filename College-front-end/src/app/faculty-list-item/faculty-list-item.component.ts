@@ -20,6 +20,7 @@ export class FacultyListItemComponent {
       this.faculties = data
     )
     console.log("In ts");
+    console.log(this.faculties);
   };
 
   getId(id: number): void {

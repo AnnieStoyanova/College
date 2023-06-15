@@ -20,7 +20,4 @@ ngOnInit() {
   console.log(this.courses);
 };
 
-  
-
-
 }

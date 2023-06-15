@@ -1,11 +1,11 @@
-<div class="table-page-container--item" *ngFor="let course of courses">
-        <div class="courses-item--course">
-            <div class="courses--name">{{course.name}}</div>
+
+<div class="table-item-container" *ngFor="let course of courses">
+    <button class="table-item">
+        <div class="table-item--course">
+            <div class="table--name">{{course.name}}</div>
         </div>
-        <div class="courses-item--course">
-            <div class="courses--name">{{course.teacher}}</div>
+        <div class="table-item--teacher">
+            <div class="table--name">{{course.teacher}}</div>
         </div>
-        <div class="courses-item--course">
-            <div class="courses--name">{{course.data}}</div>
-        </div>
+    </button>
 </div>
