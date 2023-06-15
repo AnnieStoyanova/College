@@ -36,6 +36,7 @@ export class FacultyListItemComponent {
   delete(id:number){
     console.log("delete daculty");
    this.facultyService.deleteFaculty(id);
+    window.location.reload();
   }
 
 }

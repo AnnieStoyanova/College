@@ -1,6 +1,4 @@
 package com.example.College.Faculty;
-
-import com.example.College.Course.Course;
 import com.example.College.Department.Department;
 import com.example.College.Department.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;

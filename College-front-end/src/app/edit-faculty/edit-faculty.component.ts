@@ -26,6 +26,9 @@ faculty ={
     const navigationExtras: NavigationExtras = {
       queryParams: { reload: true }
     };
-    this.router.navigate(["faculty-list-page-component"], navigationExtras);
+
+    this.router.navigate(["faculty-list-page-component"]).then(() => {
+      window.location.reload();
+    });
 }
 }

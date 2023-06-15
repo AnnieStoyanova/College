@@ -1,10 +1,8 @@
 package com.example.College.Student;
 
 import com.example.College.Course.Course;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.College.Grade.Grade;
+import jakarta.persistence.*;
 
 import java.util.List;
 import java.util.Map;
@@ -21,17 +19,18 @@ public class Student {
     private String lastName;
     private String email;
     private String password;
-   // private Map<Course, List<Double>> grades;
+    @OneToMany
+    private List<Grade> grades;
     private Double absences;
 
 
-    public Student(String role, String firstName, String lastName, String email, String password, Double absences) {
+    public Student(String role, String firstName, String lastName, String email, String password, List<Grade> grades, Double absences) {
         this.role = role;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        //this.grades = grades;
+        this.grades = grades;
         this.absences = absences;
     }
 
@@ -86,13 +85,13 @@ public class Student {
         this.lastName = lastName;
     }
 
-//    public Map<Course, List<Double>> getGrades() {
-//        return grades;
-//    }
-//
-//    public void setGrades(Map<Course, List<Double>> grades) {
-//        this.grades = grades;
-//    }
+    public List<Grade> getGrades() {
+        return grades;
+    }
+
+    public void setGrades(List<Grade> grades) {
+        this.grades = grades;
+    }
 
     public Double getAbsences() {
         return absences;
@@ -111,7 +110,7 @@ public class Student {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-//                ", grades=" + grades +
+                ", grades=" + grades +
                 ", absences=" + absences +
                 '}';
     }
