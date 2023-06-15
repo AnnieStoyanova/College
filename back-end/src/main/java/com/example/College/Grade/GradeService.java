@@ -1,4 +1,5 @@
 package com.example.College.Grade;
+import com.example.College.Faculty.Faculty;
 import com.example.College.Faculty.FacultyRepo;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +52,9 @@ public class GradeService
             throw new IllegalArgumentException("Grade with id" + gradeId + "does not exist");
         }
         gradeRepo.deleteById(gradeId);
+    }
+
+    public void addNewGrade(Grade grade) {
+        gradeRepo.saveAndFlush(grade);
     }
 }

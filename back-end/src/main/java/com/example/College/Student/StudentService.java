@@ -1,5 +1,7 @@
 package com.example.College.Student;
 
+import com.example.College.Course.Course;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +13,12 @@ import java.util.logging.Logger;
 @Service
 public class StudentService {
 
-    @Autowired
     private StudentRepo studentRepository;
+
+    public StudentService(StudentRepo studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
     private final static Logger LOGGER =
             Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
@@ -42,6 +48,10 @@ public class StudentService {
             LOGGER.log(Level.WARNING, "Failed to find v in local DB for id: {}", id);
             return null;
         }
+    }
+
+    public void addNewStudent(Student student) {
+        studentRepository.saveAndFlush(student);
     }
 
     public Collection<Student> findAllStudents() {

@@ -40,6 +40,11 @@ public class Student {
     public Student() {
     }
 
+    public void addGradeToStudent(Grade grade) {
+        this.grades.add(grade);
+    }
+    public void deleteGrade(Grade grade){this.grades.remove(grade);}
+
     public Long getId() {
         return id;
     }
