@@ -45,6 +45,20 @@ export class DepartmentService {
     );
   }
 
+  public deleteDepartment(departmentId:number,facultyId:number):void{
+    console.log("In service");
+    this.http.delete<Department>(this.departmentURL + "/" + departmentId + "/" + facultyId).subscribe(
+      (response) => {
+        // Handle the response if needed
+        console.log("Faculty deleted successfully");
+      },
+      (error) => {
+        // Handle the error if any
+        console.log("Error deleting faculty:", error);
+      }
+    );
+  }
+
   public getCourses(id:number):Observable<Course[]>{
     return this.http.get<Course[]>(this.departmentURL + '/' + id + '/' + "courses");
   }

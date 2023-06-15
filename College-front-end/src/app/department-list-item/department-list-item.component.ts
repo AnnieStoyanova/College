@@ -3,6 +3,7 @@ import { Department } from '../department';
 import { FacultyService } from '../faculty.service';
 import { Router } from '@angular/router';
 import { FacultyListItemComponent } from '../faculty-list-item/faculty-list-item.component';
+import { DepartmentService } from '../department.service';
 
 @Component({
   selector: 'app-department-list-item',
@@ -13,7 +14,7 @@ export class DepartmentListItemComponent {
   departments: Department[] = [];
   static ID: number;
 
-  constructor(private facultyService: FacultyService,private router: Router) {}
+  constructor(private departmentService: DepartmentService, private facultyService: FacultyService, private router: Router) { }
 
   ngOnInit(): void {
     this.facultyService.getDepartments(FacultyListItemComponent.ID).subscribe(
@@ -25,19 +26,25 @@ export class DepartmentListItemComponent {
         console.error("Failed to get Departments of faculty with id:" + FacultyListItemComponent.ID, error);
       }
     );
-  }  
+  }
   getId(id: number): void {
     DepartmentListItemComponent.ID = id;
     this.router.navigateByUrl('course-list-page-component');
-    console.log(DepartmentListItemComponent.ID);
   }
 
-  edit(id:number){
+  edit(id: number) {
     DepartmentListItemComponent.ID = id;
     this.router.navigateByUrl('edit-department-component');
   }
 
-  delete(id:number){
+  delete(id: number) {
+    DepartmentListItemComponent.ID = id;
+    console.log(DepartmentListItemComponent.ID);
+    console.log(FacultyListItemComponent.ID);
 
+    this.departmentService.deleteDepartment(id, FacultyListItemComponent.ID)
+    this.router.navigate(["faculty-list-page-component"]).then(() => {
+      window.location.reload();
+    });
   }
 }

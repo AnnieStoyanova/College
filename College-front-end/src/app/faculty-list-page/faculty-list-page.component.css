@@ -1,4 +1,4 @@
-body{
+body {
     display: flex;
     min-height: 100vh;
     background-color: #F6FFFC;
@@ -6,7 +6,7 @@ body{
     align-items: flex-start;
 }
 
-.faculties-page-container{
+.faculties-page-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,10 +16,29 @@ body{
     padding-top: 90px;
 }
 
-.faculties-page-container--heading{
+.faculties-page-container--heading {
     font-weight: 900;
     font-size: 48px;
     line-height: 59px;
     text-align: center;
     color: #3aa14b;
+}
+
+.addFaculty {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #3b48d8;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding-right: 30px;
+    /* Add padding to create space */
 }

@@ -4,6 +4,7 @@ import com.example.College.Department.Department;
 import com.example.College.Faculty.Faculty;
 import com.example.College.Student.Student;
 import com.example.College.Student.StudentService;
+import com.example.College.Department.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,12 +18,13 @@ import java.util.Optional;
 public class CourseController {
 
     private CourseService courseService;
-
     private StudentService studentService;
+    private DepartmentService departmentService;
 
     @Autowired
-    public CourseController(CourseService courseService) {
+    public CourseController(CourseService courseService, DepartmentService departmentService) {
         this.courseService = courseService;
+        this.departmentService = departmentService;
     }
 
     @GetMapping(value = "/all")
@@ -61,8 +63,13 @@ public class CourseController {
     }
 
 
-    @DeleteMapping(value = "/delete/{courseId}")
-    public void deleteCourse(@PathVariable("courseId") Long courseId) {
+    @DeleteMapping(value = "/{courseId}/{departmentId}")
+    public void deleteCourse(@PathVariable("courseId") Long courseId,@PathVariable("departmentId") Long departmentId) {
+
+        this.departmentService.findById(departmentId).map(department -> {
+            department.deleteCourse(courseService.findById(courseId).get());
+            return null;
+        });
         courseService.deleteCourse(courseId);
     }
 }

@@ -2,6 +2,7 @@ package com.example.College.Department;
 
 import com.example.College.Course.Course;
 import com.example.College.Course.CourseService;
+import com.example.College.Faculty.FacultyService;
 import com.example.College.Teacher.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,12 +20,17 @@ public class DepartmentController {
     private CourseService courseService;
     private TeacherService teacherService;
 
-    @Autowired
-    public DepartmentController(DepartmentService departmentService, CourseService courseService, TeacherService teacherService) {
+    private FacultyService facultyService;
+
+    public DepartmentController(DepartmentService departmentService, CourseService courseService, TeacherService teacherService, FacultyService facultyService) {
         this.departmentService = departmentService;
         this.courseService = courseService;
         this.teacherService = teacherService;
+        this.facultyService = facultyService;
     }
+
+    @Autowired
+
 
     @GetMapping(value = "/all")
     public List<Department> findAll(){
@@ -71,10 +77,11 @@ public class DepartmentController {
         return departmentService.findById(departmentId).map(Department::getCourses);
     }
 
-    @DeleteMapping(value = "/{departmentId}")
-    public void deleteDepartment(@PathVariable("departmentId") Long departmentId) {
-        this.departmentService.findById(departmentId).map((department)-> {
-            department.getFaculty().deleteDepartment(department);
+    @DeleteMapping(value = "/{departmentId}/{facultyId}")
+    public void deleteDepartment(@PathVariable("departmentId") Long departmentId,@PathVariable("facultyId") Long facultyId) {
+
+        this.facultyService.findById(facultyId).map(faculty -> {
+            faculty.deleteDepartment(departmentService.findById(departmentId).get());
             return null;
         });
         departmentService.deleteDepartment(departmentId);

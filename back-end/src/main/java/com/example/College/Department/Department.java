@@ -49,6 +49,8 @@ public class Department {
         this.courses.add(course);
     }
 
+    public void deleteCourse(Course course){this.courses.remove(course);}
+
     public String getName() {
         return name;
     }
