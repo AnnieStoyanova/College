@@ -14,13 +14,17 @@ export class EditCourseComponent {
 
 course = {
   id:12,
-  name: " "
+  name: " ",
+  teacher: " ",
+  data: " "
 }
 
 edit(name:string){
   this.course = {
   id:12,
-  name:name
+  name:name,
+  teacher:" ",
+  data:" "
 }
 
 this.courseService.updateCourse(CoursesListItemComponent.ID,this.course)

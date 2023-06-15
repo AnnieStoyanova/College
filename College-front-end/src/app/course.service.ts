@@ -17,6 +17,7 @@ export class CourseService {
   }
 
   public findAll(): Observable<Course[]> {
+    console.log("In find all function");
     return this.http.get<Course[]>(this.courseUrl + "/all");
   }
 

@@ -10,11 +10,12 @@ export class GradeService {
   
   private gradeUrl: string;
 
+
   constructor(private http: HttpClient) { 
     this.gradeUrl = 'http://localhost:8080/api/grade';
   }
 
-  public getCourse(id:number):Observable<Course[]>{
-    return this.http.get<Course[]>(this.gradeUrl +'/getCourse'+ id);
+  public getCourse(id:number):Observable<Course>{
+    return this.http.get<Course>(this.gradeUrl +'/getCourse'+ id);
   }
 }

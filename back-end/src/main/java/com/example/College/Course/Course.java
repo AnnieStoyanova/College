@@ -26,14 +26,17 @@ public class Course {
     @ManyToMany
     private List<Student> students;
 
+    private String data;
+
     public Course() {
     }
 
-    public Course(String name, Teacher teacher, Department department, List<Student> students) {
+    public Course(String name, Teacher teacher, Department department, List<Student> students, String data) {
         this.name = name;
         this.teacher = teacher;
         this.department = department;
         this.students = students;
+        this.data = data;
     }
 
     public Course(String name, Teacher teacher) {
@@ -85,6 +88,14 @@ public class Course {
         this.students = students;
     }
 
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
     @Override
     public String toString() {
         return "Course{" +
@@ -93,8 +104,7 @@ public class Course {
                 ", teacher=" + teacher +
                 ", department=" + department +
                 ", students=" + students +
+                ", data='" + data + '\'' +
                 '}';
     }
-
-
 }

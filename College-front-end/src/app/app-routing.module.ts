@@ -12,6 +12,7 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
 import { StudentListPageComponent } from './student-list-page/student-list-page.component';
 import { AddFacultyPageComponent } from './add-faculty-page/add-faculty-page.component';
 import { GradeListPageComponent } from './grade-list-page/grade-list-page.component';
+import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
   {path: 'home-page-component', component: HomePageComponent},
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: 'edit-course-component', component: EditCourseComponent},
   {path: 'student-list-page-component', component: StudentListPageComponent},
   {path: 'add-faculty-page-component', component: AddFacultyPageComponent},
-  {path: 'grade-list-page-component', component: GradeListPageComponent}
+  {path: 'grade-list-page-component', component: GradeListPageComponent},
+  {path: 'table-component', component: TableComponent}
 ];
 
 @NgModule({

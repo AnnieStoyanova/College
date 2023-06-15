@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Grade} from '../grade';
+import { Course } from '../course';
 import { GradeService } from '../grade.service';
 import { StudentService } from '../student.service';
 import { StudentListItemComponent } from '../student-list-item/student-list-item.component';
@@ -13,8 +14,10 @@ import { Router } from '@angular/router';
 export class GradeListItemComponent {
   grades: Grade[] = [];
   static ID: number;
+  static courseName: string;
+  static course:Course;
 
-  constructor(private studentService:StudentService,private router:Router) {}
+  constructor(private studentService:StudentService,private router:Router, private gradeService:GradeService) {}
 
   ngOnInit(): void{
     this.studentService.getGrades(StudentListItemComponent.ID).subscribe(
@@ -31,6 +34,11 @@ export class GradeListItemComponent {
   edit(id:number){
     StudentListItemComponent.ID = id;
 this.router.navigateByUrl("edit-student-component")
+  }
+
+  showCourse():void {
+    //GradeListItemComponent.course = this.gradeService.getCourse(StudentListItemComponent.ID);
+   // GradeListItemComponent.courseName = this.gradeService.getCourse(StudentListItemComponent.ID);
   }
 
   delete(id:number){
