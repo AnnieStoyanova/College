@@ -22,9 +22,10 @@ public class CourseController {
     private DepartmentService departmentService;
 
     @Autowired
-    public CourseController(CourseService courseService, DepartmentService departmentService) {
+    public CourseController(CourseService courseService, DepartmentService departmentService, StudentService studentService) {
         this.courseService = courseService;
         this.departmentService = departmentService;
+        this.studentService  = studentService;
     }
 
     @GetMapping(value = "/all")

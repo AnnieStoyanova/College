@@ -14,9 +14,9 @@ export class CoursesListItemComponent {
   courses: Course[] = [];
   static ID: number;
 
-  constructor(private departmentService:DepartmentService,private router:Router) {}
+  constructor(private departmentService: DepartmentService, private router: Router) { }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.departmentService.getCourses(DepartmentListItemComponent.ID).subscribe(
       data => {
         this.courses = data;
@@ -28,12 +28,17 @@ export class CoursesListItemComponent {
     );
   };
 
-  edit(id:number){
-CoursesListItemComponent.ID = id;
-this.router.navigateByUrl("edit-course-component")
+  getId(id: number): void {
+    CoursesListItemComponent.ID = id;
+    this.router.navigateByUrl('student-list-page-component');
   }
 
-  delete(id:number){
+  edit(id: number) {
+    CoursesListItemComponent.ID = id;
+    this.router.navigateByUrl("edit-course-component")
+  }
+
+  delete(id: number) {
 
   }
 }

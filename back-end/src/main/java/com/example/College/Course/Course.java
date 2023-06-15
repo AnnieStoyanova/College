@@ -41,6 +41,10 @@ public class Course {
         this.teacher = teacher;
     }
 
+    public void addStudentToCourse(Student student) {
+        this.students.add(student);
+    }
+
     public String getName() {
         return name;
     }
@@ -92,7 +96,5 @@ public class Course {
                 '}';
     }
 
-    public void addStudentToCourse(Student student) {
-        this.students.add(student);
-    }
+
 }
