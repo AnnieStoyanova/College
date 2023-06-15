@@ -1,5 +1,6 @@
 package com.example.College.Course;
 
+import com.example.College.Student.Student;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ public class CourseService {
     public void addNewCourse(Course course) {
         courseRepo.saveAndFlush(course);
     }
+
 
     public Optional<Course> findById(Long id){
         return courseRepo.findById(id);

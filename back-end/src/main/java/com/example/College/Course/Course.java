@@ -91,4 +91,8 @@ public class Course {
                 ", students=" + students +
                 '}';
     }
+
+    public void addStudentToCourse(Student student) {
+        this.students.add(student);
+    }
 }

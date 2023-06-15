@@ -15,6 +15,8 @@ import { EditFacultyComponent } from './edit-faculty/edit-faculty.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { EditDepartmentComponent } from './edit-department/edit-department.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
+import { StudentListPageComponent } from './student-list-page/student-list-page.component';
+import { StudentListItemComponent } from './student-list-item/student-list-item.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
     EditFacultyComponent,
     LoginPageComponent,
     EditDepartmentComponent,
-    EditCourseComponent
+    EditCourseComponent,
+    StudentListPageComponent,
+    StudentListItemComponent
     
   ],
   imports: [

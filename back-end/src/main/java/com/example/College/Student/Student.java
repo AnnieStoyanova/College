@@ -19,17 +19,20 @@ public class Student {
     private String lastName;
     private String email;
     private String password;
+    @ManyToMany
+    private List<Course> courses;
     @OneToMany
     private List<Grade> grades;
     private Double absences;
 
 
-    public Student(String role, String firstName, String lastName, String email, String password, List<Grade> grades, Double absences) {
+    public Student(String role, String firstName, String lastName, String email, String password, List<Course> courses, List<Grade> grades, Double absences) {
         this.role = role;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.courses = courses;
         this.grades = grades;
         this.absences = absences;
     }
@@ -101,6 +104,14 @@ public class Student {
         this.absences = absences;
     }
 
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -110,6 +121,7 @@ public class Student {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", courses=" + courses +
                 ", grades=" + grades +
                 ", absences=" + absences +
                 '}';

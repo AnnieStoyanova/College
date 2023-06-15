@@ -1,0 +1,84 @@
+.student-item-container {
+    margin-top: 10px;
+    height: 100px;
+    width: 200px;
+  }
+  
+  .student-item {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    max-width: 300px;
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .student-item:hover {
+    transform: translateY(-4px);
+  }
+  
+  .student--name {
+    font-weight: bold;
+  } 
+
+  .button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding-right: 30px; /* Add padding to create space */
+  }
+  
+  .button:hover {
+    background-color: #155818;
+  }
+  
+  .button:active {
+    background-color: #3e8e41;
+  }
+  
+  .button:focus {
+    outline:#4CAF50;
+  }
+
+  .button-delete {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #8f1d1d;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .button-delete:hover {
+    background-color: #5c1010;
+  }
+  
+  .button-delete:active {
+    background-color: #5c1010;
+  }
+  
+  .button-delete:focus {
+    outline:#5c1010;
+  }
+  
+.course-item,
+.button,
+.button-delete {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px;
+}
+
+

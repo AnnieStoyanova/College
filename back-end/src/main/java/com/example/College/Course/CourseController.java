@@ -1,5 +1,9 @@
 package com.example.College.Course;
 
+import com.example.College.Department.Department;
+import com.example.College.Faculty.Faculty;
+import com.example.College.Student.Student;
+import com.example.College.Student.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +17,8 @@ import java.util.Optional;
 public class CourseController {
 
     private CourseService courseService;
+
+    private StudentService studentService;
 
     @Autowired
     public CourseController(CourseService courseService) {
@@ -38,6 +44,20 @@ public class CourseController {
                     courseService.addNewCourse(course);
                     return null;
                 });
+    }
+
+    @GetMapping(value = "/{courseId}/students")
+    public Optional<List<Student>> getAllStudents(@PathVariable("courseId") Long courseId) {
+        return courseService.findById(courseId).map(Course::getStudents);
+    }
+
+    @PatchMapping(value = "/addStudentToCourse/{courseId}/{studentId}")
+    public Optional<Object> addStudent(@PathVariable("courseId") Long courseId, @PathVariable("studentId") Long studentId){
+        return courseService.findById(courseId).map(course -> {
+            course.addStudentToCourse(studentService.findStudentById(studentId).get());
+            courseService.addNewCourse(course);
+            return course;
+        });
     }
 
 

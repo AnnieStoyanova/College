@@ -1,0 +1,10 @@
+<div class="student-item-container" *ngFor="let student of students">
+    <button class="student-item">
+        <div class="student-item--student">
+            <div class="student--name">{{student.firstName}}</div>
+            <div class="student--name">{{student.lastName}}</div>
+        </div>
+    </button>
+    <button class="button" (click)="edit(student.id)">Edit</button>
+    <button class="button-delete" (click)="delete(student.id)">Delete</button>
+</div>
