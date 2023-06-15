@@ -1,0 +1,9 @@
+<div class="grade-item-container" *ngFor="let grade of grades">
+    <button class="grade-item">
+        <div class="grade-item--grade">
+            <div class="grade--name">{{grade.value}}</div>
+        </div>
+    </button>
+    <button class="button" (click)="edit(grade.value)">Edit</button>
+    <button class="button-delete" (click)="delete(grade.value)">Delete</button>
+</div>

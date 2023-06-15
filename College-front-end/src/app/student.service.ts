@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Student } from './student';
+import { Grade } from './grade';
 
 @Injectable({
   providedIn: 'root'
@@ -46,5 +47,8 @@ export class StudentService {
         console.error("Error updating student", error);
       }
     );
+  }
+  public getGrades(id:number):Observable<Grade[]>{
+    return this.http.get<Grade[]>(this.studentUrl + '/' + id + '/' + "grades");
   }
 }

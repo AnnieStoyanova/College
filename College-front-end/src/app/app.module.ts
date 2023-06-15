@@ -18,6 +18,8 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
 import { StudentListPageComponent } from './student-list-page/student-list-page.component';
 import { StudentListItemComponent } from './student-list-item/student-list-item.component';
 import { AddFacultyPageComponent } from './add-faculty-page/add-faculty-page.component';
+import { GradeListPageComponent } from './grade-list-page/grade-list-page.component';
+import { GradeListItemComponent } from './grade-list-item/grade-list-item.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { AddFacultyPageComponent } from './add-faculty-page/add-faculty-page.com
     EditCourseComponent,
     StudentListPageComponent,
     StudentListItemComponent,
-    AddFacultyPageComponent
+    AddFacultyPageComponent,
+    GradeListPageComponent,
+    GradeListItemComponent
     
   ],
   imports: [
